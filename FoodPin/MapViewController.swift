@@ -2,9 +2,10 @@
 //  MapViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 30/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Developer Engineer on 2017/10/13
+//  Copyright © 2017 Locosys test. All rights reserved.
 //
+
 
 import UIKit
 import MapKit
@@ -17,7 +18,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Convert address to coordinate and annotate it on map
+        // 轉換地址以在地圖上進行協調和註釋
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(restaurant.location, completionHandler: { placemarks, error in
             if error != nil {
@@ -26,10 +27,10 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             }
             
             if let placemarks = placemarks {
-                // Get the first placemark
+                // 獲得第一個地標
                 let placemark = placemarks[0]
             
-                // Add annotation
+                // 加上註解
                 let annotation = MKPointAnnotation()
                 annotation.title = self.restaurant.name
                 annotation.subtitle = self.restaurant.type
@@ -45,7 +46,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             
         })
         
-        // Map customization
+        // Map客製化
         mapView.showsCompass = true
         mapView.showsScale = true
         mapView.showsTraffic = true

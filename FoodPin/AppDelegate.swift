@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 14/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Developer Engineer on 2017/10/13
+//  Copyright © 2017 Locosys test. All rights reserved.
 //
 
 import UIKit
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white, NSFontAttributeName:barFont]
         }
         
-        // Change the status bar's appearance
+        // 更改狀態欄的外觀
         UIApplication.shared.statusBarStyle = .lightContent
         
         return true

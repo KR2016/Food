@@ -2,8 +2,8 @@
 //  RestaurantTableViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 14/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Developer Engineer on 2017/10/13
+//  Copyright © 2017 Locosys test. All rights reserved.
 //
 
 import UIKit
@@ -36,10 +36,10 @@ class RestaurantTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Remove the title of the back button
+        // 將返回按鈕標題清空
         navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
         
-        // Enable self sizing cells
+        // 啟用自定義單元格
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
     }
@@ -52,10 +52,10 @@ class RestaurantTableViewController: UITableViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // 處理可以重新創建的任何資源。
     }
 
-    // MARK: - Table view data source
+    // MARK: - 表格資料源
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -70,7 +70,7 @@ class RestaurantTableViewController: UITableViewController {
         let cellIdentifier = "Cell"
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as! RestaurantTableViewCell
         
-        // Configure the cell...
+        // 設定 cell
         cell.nameLabel.text = restaurants[indexPath.row].name
         cell.thumbnailImageView.image = UIImage(named: restaurants[indexPath.row].image)
         cell.locationLabel.text = restaurants[indexPath.row].location
@@ -80,12 +80,12 @@ class RestaurantTableViewController: UITableViewController {
         return cell
     }
     
-    // MARK: - Table view delegate
+    // MARK: -表格操作
  
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            // Delete the row from the data source
+            // 從data source刪除列
             restaurants.remove(at: indexPath.row)
         }
         
@@ -94,7 +94,7 @@ class RestaurantTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         
-        // Social Sharing Button
+        // 社交分享按鈕
         let shareAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Share", handler: { (action, indexPath) -> Void in
             
             let defaultText = "Just checking in at " + self.restaurants[indexPath.row].name
@@ -104,7 +104,7 @@ class RestaurantTableViewController: UITableViewController {
             }
         })
         
-        // Delete button
+        // 刪除鈕
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.default, title: "Delete",handler: { (action, indexPath) -> Void in
             
             // Delete the row from the data source
@@ -113,7 +113,7 @@ class RestaurantTableViewController: UITableViewController {
             self.tableView.deleteRows(at: [indexPath], with: .fade)
         })
         
-        // Set the button color
+        // 設定按鈕欄位
         shareAction.backgroundColor = UIColor(red: 28.0/255.0, green: 165.0/255.0, blue: 253.0/255.0, alpha: 1.0)
         deleteAction.backgroundColor = UIColor(red: 202.0/255.0, green: 202.0/255.0, blue: 203.0/255.0, alpha: 1.0)
 
@@ -121,7 +121,7 @@ class RestaurantTableViewController: UITableViewController {
     }
 
     
-    // MARK: - Navigation
+    // MARK: - 導航
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

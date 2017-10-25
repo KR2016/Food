@@ -2,9 +2,10 @@
 //  RestaurantDetailViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 19/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Developer Engineer on 2017/10/13
+//  Copyright © 2017 Locosys test. All rights reserved.
 //
+
 
 import UIKit
 
@@ -20,26 +21,26 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // 載入視圖後，做其他設定
         restaurantImageView.image = UIImage(named: restaurant.image)
         
-        // Change the color of the table view
+        // 更改表格式圖的顏色設定
         tableView.backgroundColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.2)
         
-        // Remove the separators of the empty rows
+        // 刪除空行的分隔符
         tableView.tableFooterView = UIView(frame: CGRect.zero)
         
-        // Change the color of the separator
+        // 更改分隔符的顏色
         tableView.separatorColor = UIColor(red: 240.0/255.0, green: 240.0/255.0, blue: 240.0/255.0, alpha: 0.8)
         
-        // Set the title of the navigation bar
+        // 設置導航欄的標題
         title = restaurant.name
         
-        // Enable self sizing cells
+        // 啟用自定義單元格
         tableView.estimatedRowHeight = 36.0
         tableView.rowHeight = UITableViewAutomaticDimension
 
-        // Set the rating of the restaurant
+        // 設置餐廳的評級
         if restaurant.rating != "" {
             ratingButton.setImage(UIImage(named: restaurant.rating), for: UIControlState())
         }
@@ -55,7 +56,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        // 處理可以重新創建的任何資源。
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,7 +66,7 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RestaurantDetailTableViewCell
         
-        // Configure the cell...
+        // 設定cell
         switch indexPath.row {
         case 0:
             cell.fieldLabel.text = "Name"
@@ -103,9 +104,10 @@ class RestaurantDetailViewController: UIViewController, UITableViewDataSource, U
     }
     
     
-    // MARK: - Navigation
+    // MARK: - 導覽
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
+//    在 storyboard-based的應用程序中，您通常需要在導覽之前做一點準備
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMap" {
             let destinationController = segue.destination as! MapViewController

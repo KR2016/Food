@@ -2,9 +2,10 @@
 //  ReviewViewController.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 27/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Developer Engineer on 2017/10/13
+//  Copyright © 2017 Locosys test. All rights reserved.
 //
+
 
 import UIKit
 
@@ -22,7 +23,7 @@ class ReviewViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Apply a blurring effect to the background image view
+        // 對背景圖像視圖應用模糊效果
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         let blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds

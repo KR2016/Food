@@ -2,9 +2,10 @@
 //  Restaurant.swift
 //  FoodPin
 //
-//  Created by Simon Ng on 20/8/15.
-//  Copyright © 2015 AppCoda. All rights reserved.
+//  Created by Developer Engineer on 2017/10/13
+//  Copyright © 2017 Locosys test. All rights reserved.
 //
+
 
 import Foundation
 
